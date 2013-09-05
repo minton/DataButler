@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataButlerTests", "DataButlerTests\DataButlerTests.csproj", "{2720A52A-8703-41C5-959C-4CD232DEF6A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataButler", "DataButler\DataButler.csproj", "{24251680-23B0-41A7-AF71-F61D8D7A6FC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2720A52A-8703-41C5-959C-4CD232DEF6A1}.Debug|x86.ActiveCfg = Debug|x86
+		{2720A52A-8703-41C5-959C-4CD232DEF6A1}.Debug|x86.Build.0 = Debug|x86
+		{2720A52A-8703-41C5-959C-4CD232DEF6A1}.Release|x86.ActiveCfg = Release|x86
+		{24251680-23B0-41A7-AF71-F61D8D7A6FC4}.Debug|x86.ActiveCfg = Debug|x86
+		{24251680-23B0-41A7-AF71-F61D8D7A6FC4}.Debug|x86.Build.0 = Debug|x86
+		{24251680-23B0-41A7-AF71-F61D8D7A6FC4}.Release|x86.ActiveCfg = Release|x86
+		{24251680-23B0-41A7-AF71-F61D8D7A6FC4}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
