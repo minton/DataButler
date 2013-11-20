@@ -53,16 +53,11 @@ namespace DataButler
             txtLog.Visible = true;
             Cursor = Cursors.WaitCursor;
             btnRestore.Enabled =
-                btnCancel.Enabled =
                 txtName.Enabled = false;
             WaitImage.Visible = true;
             _backgroundWorker.RunWorkerAsync(txtName.Text);
         }
 
-        private void CancelClicked(object sender, EventArgs e)
-        {
-            Close();
-        }
         private void BackgroundWorkerOnDoWork(object sender, DoWorkEventArgs doWorkEventArgs)
         {
             var restoreAs = doWorkEventArgs.Argument.ToString();
@@ -77,8 +72,7 @@ namespace DataButler
             txtLog.ForeColor = success ? Color.Black : Color.Yellow;
             var message = success ? "Restore SUCCESSFULLY COMPLETE." : "Restore FAILED!";
             LogMessage(message);
-            btnCancel.Enabled =
-                btnRestore.Enabled = true;
+            btnRestore.Enabled = true;
         }
 
         private void VersionLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using Microsoft.Win32;
 
 namespace DataButler
@@ -16,33 +15,12 @@ namespace DataButler
         [STAThread]
         static void Main()
         {
-            UpdateCheck();
             SetupRegistry();
             if (DontRun()) return;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Restore(Environment.GetCommandLineArgs()[1]));
-        }
-
-        static void UpdateCheck()
-        {
-            try
-            {
-                var latestVersionString = XDocument.Load("http://i1047/DataButler/DataButler.application").Descendants().ToArray()[1].Attribute("version").Value;
-                var latestVersion = Convert.ToInt16(latestVersionString.Replace(".", ""));
-                var installedVersion = Convert.ToInt16(Application.ProductVersion.Replace(".", ""));
-                var updateString = string.Format("An update to DataButler is ready. Update?{0}{0}Latest version: {1}{0}Installed version:{2}", Environment.NewLine, latestVersionString, Application.ProductVersion);
-                if (latestVersion > installedVersion && MessageBox.Show(updateString, "Updates", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    Process.Start("http://i1047/DataButler/publish.htm");
-                    Application.Exit();
-                }
-            }
-            catch (Exception)
-            {
-                //Let them pass
-            }            
         }
 
         static bool DontRun()
