@@ -77,7 +77,7 @@ namespace DataButler
 
         private void VersionLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://i1047/DataButler/publish.htm");
+            Process.Start("https://github.com/minton/DataButler");
         }
     }
 }
