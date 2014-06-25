@@ -11,10 +11,11 @@ namespace DataButler
     {
         readonly string _backupPath;
         readonly BackgroundWorker _backgroundWorker = new BackgroundWorker { WorkerReportsProgress = true };
-
-        public Restore(string backupPath)
+        readonly bool auto;
+        public Restore(string backupPath, string flag)
         {
             _backupPath = backupPath;
+            auto = flag != null && flag.ToUpper() == "-A";
             InitializeComponent();
             lnkVersion.Text = Application.ProductVersion;
             Text += string.Format(" - [{0}]", _backupPath);
@@ -32,6 +33,7 @@ namespace DataButler
             txtName.Text = databaseName ?? "Invalid file.";
             txtName.SelectAll();
             txtName.Focus();
+            Load += (s, e) => { if (auto) btnRestore.PerformClick(); };
         }
 
         void ProgressReported(object sender, ProgressChangedEventArgs e)
@@ -73,6 +75,7 @@ namespace DataButler
             var message = success ? "Restore SUCCESSFULLY COMPLETE." : "Restore FAILED!";
             LogMessage(message);
             btnRestore.Enabled = true;
+            if (auto) Close();
         }
 
         private void VersionLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

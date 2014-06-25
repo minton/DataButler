@@ -20,12 +20,12 @@ namespace DataButler
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Restore(Environment.GetCommandLineArgs()[1]));
+            Application.Run(new Restore(Environment.GetCommandLineArgs()[1], Environment.GetCommandLineArgs()[2]));
         }
 
         static bool DontRun()
         {
-            if (Environment.GetCommandLineArgs().Count() != 2) return true;
+            if (Environment.GetCommandLineArgs().Count() < 2) return true;
             if (File.Exists(Environment.GetCommandLineArgs()[1])) return false;
             MessageBox.Show("Invalid database backup.", "DataButler");
             return true;
