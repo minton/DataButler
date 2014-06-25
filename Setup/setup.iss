@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "DataButler"
-#define MyAppVersion "1.0.0.31"
+#define MyAppVersion "1.0.0.32"
 #define MyAppPublisher "Michael Minton"
 #define MyAppURL "http://michaelminton.com"
 #define MyAppExeName "DataButler.exe"
