@@ -1,7 +1,16 @@
 #DataButler
 
+![The Data Butler Yo](https://github.com/minton/DataButler/raw/master/DataButler.png)
+
 A simple tool to restore SQL backups (.bak files) to the local sql server using trusted connection.
 
+## Restore a database backup using SQL Management Studio
+
+![MSSQL](https://github.com/minton/DataButler/raw/master/MSSQL.gif)
+
+## Restore a database backup using DataButler
+
+![DataButler](https://github.com/minton/DataButler/raw/master/DataButler.gif)
 
 #License
 
@@ -26,6 +35,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
-          
