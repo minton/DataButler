@@ -32,10 +32,10 @@
             this.btnRestore = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.WaitImage = new System.Windows.Forms.PictureBox();
             this.txtLog = new System.Windows.Forms.TextBox();
             this.lnkVersion = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.WaitImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WaitImage)).BeginInit();
             this.SuspendLayout();
@@ -67,26 +67,6 @@
             this.txtName.Size = new System.Drawing.Size(253, 27);
             this.txtName.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DataButler.Properties.Resources.Loading;
-            this.pictureBox1.Location = new System.Drawing.Point(419, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-            // 
-            // WaitImage
-            // 
-            this.WaitImage.Image = global::DataButler.Properties.Resources.DataButler;
-            this.WaitImage.Location = new System.Drawing.Point(-76, -36);
-            this.WaitImage.Name = "WaitImage";
-            this.WaitImage.Size = new System.Drawing.Size(230, 228);
-            this.WaitImage.TabIndex = 0;
-            this.WaitImage.TabStop = false;
-            // 
             // txtLog
             // 
             this.txtLog.BackColor = System.Drawing.SystemColors.Window;
@@ -102,13 +82,33 @@
             // lnkVersion
             // 
             this.lnkVersion.AutoSize = true;
-            this.lnkVersion.Location = new System.Drawing.Point(66, 105);
+            this.lnkVersion.Location = new System.Drawing.Point(112, 126);
             this.lnkVersion.Name = "lnkVersion";
             this.lnkVersion.Size = new System.Drawing.Size(40, 13);
             this.lnkVersion.TabIndex = 4;
             this.lnkVersion.TabStop = true;
             this.lnkVersion.Text = "0.0.0.0";
             this.lnkVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.VersionLinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DataButler.Properties.Resources.Loading;
+            this.pictureBox1.Location = new System.Drawing.Point(419, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
+            // WaitImage
+            // 
+            this.WaitImage.Image = global::DataButler.Properties.Resources.DataButler;
+            this.WaitImage.Location = new System.Drawing.Point(-30, -15);
+            this.WaitImage.Name = "WaitImage";
+            this.WaitImage.Size = new System.Drawing.Size(230, 228);
+            this.WaitImage.TabIndex = 0;
+            this.WaitImage.TabStop = false;
             // 
             // Restore
             // 
