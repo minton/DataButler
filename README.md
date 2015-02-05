@@ -2,7 +2,7 @@
 
 ![The Data Butler Yo](https://github.com/minton/DataButler/raw/master/DataButler.png)
 
-A simple tool to restore SQL backups (.bak files) to the local sql server using trusted connection.
+A simple tool to back and restore SQL backups (.bak files) to the local sql server using trusted connection.
 
 ## Restore a database backup using SQL Management Studio
 
