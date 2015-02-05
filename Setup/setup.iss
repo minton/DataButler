@@ -2,9 +2,9 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "DataButler"
-#define MyAppVersion "1.0.0.32"
+#define MyAppVersion "1.0.0.33"
 #define MyAppPublisher "Michael Minton"
-#define MyAppURL "http://michaelminton.com"
+#define MyAppURL "http://michael.minton.io"
 #define MyAppExeName "DataButler.exe"
 
 [Setup]
@@ -24,7 +24,7 @@ DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 LicenseFile=C:\Dev\DataButler\Resources\License.txt
 OutputDir=C:\Dev\DataButler\Setup
-OutputBaseFilename=DataButlerSetup1.0.0.32
+OutputBaseFilename=DataButlerSetup1.0.0.33
 SetupIconFile=C:\Dev\DataButler\Resources\DataButler.ico
 Compression=lzma
 SolidCompression=yes

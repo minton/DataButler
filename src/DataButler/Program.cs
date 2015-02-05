@@ -15,12 +15,19 @@ namespace DataButler
         [STAThread]
         static void Main()
         {
-            SetupRegistry();
-            if (DontRun()) return;
-
+            SetupRegistry();            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Restore(GetCommandLineArgOrNull(1),GetCommandLineArgOrNull(2)));
+            var startForm = GetStartupForm();
+            if (startForm == null) return;
+            Application.Run(startForm);
+        }
+
+        static Form GetStartupForm()
+        {
+            if (Environment.GetCommandLineArgs().Count() == 1) return new Backup();
+
+            return AbortRestore() ? null : new Restore(GetCommandLineArgOrNull(1), GetCommandLineArgOrNull(2));
         }
 
         private static string GetCommandLineArgOrNull(int index)
@@ -30,7 +37,7 @@ namespace DataButler
         }
 
 
-        static bool DontRun()
+        static bool AbortRestore()
         {
             if (Environment.GetCommandLineArgs().Count() < 2) return true;
             if (File.Exists(GetCommandLineArgOrNull(1))) return false;

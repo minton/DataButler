@@ -93,6 +93,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup.Designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Restore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,10 @@
     <Compile Include="Utilities\Dapper.cs" />
     <Compile Include="Utilities\Database.cs" />
     <Compile Include="Utilities\FileList.cs" />
+    <Compile Include="Utilities\SqlDatabase.cs" />
+    <EmbeddedResource Include="Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Restore.resx">
       <DependentUpon>Restore.cs</DependentUpon>
     </EmbeddedResource>
