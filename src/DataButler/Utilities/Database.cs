@@ -93,7 +93,7 @@ namespace DataButler.Utilities
             var backupDir = string.IsNullOrEmpty(database.LastBackupName)
                 ? @"C:\temp\"
                 : Path.GetDirectoryName(database.LastBackupName);
-            var backupName = string.Format("{0}{1}", database.Name, DateTime.Now.ToString("yyyMMddHHmm"));
+            var backupName = string.Format("{0}{1}", database.Name, DateTime.Now.ToString("yyyyMMddHHmm"));
             var fullBackupName = Path.Combine(backupDir, string.Format("{0}.bak", backupName));
             var copyCount = 0;
             while (File.Exists(fullBackupName))
