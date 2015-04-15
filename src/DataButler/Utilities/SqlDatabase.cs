@@ -10,7 +10,7 @@
             LastBackupName = lastBackupName;
         }
 
-        public string Name { get; private set; }
+        public string Name { get; set; }
         public string LastBackupName { get; set; }
         public override string ToString()
         {

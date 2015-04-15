@@ -11,6 +11,7 @@ namespace DataButler
     public partial class Backup : Form
     {
         readonly BackgroundWorker _backgroundWorker = new BackgroundWorker { WorkerReportsProgress = true };
+        string databaseBackupName;
         public Backup()
         {
             InitializeComponent();
@@ -51,15 +52,16 @@ namespace DataButler
             txtLog.Visible = true;
             txtLog.Clear();
             Cursor = Cursors.WaitCursor;
-            btnBackup.Enabled = cbDatabase.Enabled = false;
+           // btnBackup.Enabled = cbDatabase.Enabled = false;
             WaitImage.Visible = true;
             _backgroundWorker.RunWorkerAsync(cbDatabase.SelectedItem as SqlDatabase);
         }
 
         private void BackgroundWorkerOnDoWork(object sender, DoWorkEventArgs e)
         {
+            databaseBackupName = txtBackupAs.Text;
             var database = e.Argument as SqlDatabase;
-            e.Result = Database.Backup(database, _backgroundWorker);
+            e.Result = Database.Backup(database, databaseBackupName, _backgroundWorker);
         }
 
         private void BackgroundWorkerOnRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
