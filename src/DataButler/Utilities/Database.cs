@@ -74,11 +74,10 @@ namespace DataButler.Utilities
             }
         }
 
-        public static string Backup(SqlDatabase database, string databaseBackupName, BackgroundWorker backgroundWorker = null)
+        public static string Backup(SqlDatabase database, string userBackupName, BackgroundWorker backgroundWorker = null)
         {
             string result;
-            var newName = databaseBackupName;
-            var fileName = GetBackupFileName(database, newName);
+            var fileName = GetBackupFileName(database, userBackupName);
             _bgw = backgroundWorker;
             using (var con = (SqlConnection)OpenConnection())
             {
@@ -89,12 +88,12 @@ namespace DataButler.Utilities
             return result;
         }
 
-        static string GetBackupFileName(SqlDatabase database, string newName)
+        static string GetBackupFileName(SqlDatabase database, string userBackupName)
         {
             var backupDir = string.IsNullOrEmpty(database.LastBackupName)
                 ? @"C:\temp\"
                 : Path.GetDirectoryName(database.LastBackupName);
-            var backupName = SetBackupName(database, newName);
+            var backupName = SetBackupName(database.Name, userBackupName);
             var fullBackupName = Path.Combine(backupDir, string.Format("{0}.bak", backupName));
             var copyCount = 0;
             while (File.Exists(fullBackupName))
@@ -104,11 +103,11 @@ namespace DataButler.Utilities
             return fullBackupName;
         }
 
-        static object SetBackupName(SqlDatabase database, string newName)
+        public static object SetBackupName(string databaseName, string userBackupName)
         {
-            return string.IsNullOrWhiteSpace(newName)
-                ? string.Format("{0}, {1}", database.Name, DateTime.Now.ToString("yyyyMMddHHmm"))
-                :  newName;
+            return string.IsNullOrWhiteSpace(userBackupName)
+                ? string.Format("{0}, {1}", databaseName, DateTime.Now.ToString("yyyyMMddHHmm"))
+                :  userBackupName;
         }
 
         public static string GetDatabaseName(string file, out string failure)

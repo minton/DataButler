@@ -11,7 +11,7 @@ namespace DataButler
     public partial class Backup : Form
     {
         readonly BackgroundWorker _backgroundWorker = new BackgroundWorker { WorkerReportsProgress = true };
-        string databaseBackupName;
+        public string userBackupName;
         public Backup()
         {
             InitializeComponent();
@@ -58,9 +58,9 @@ namespace DataButler
 
         private void BackgroundWorkerOnDoWork(object sender, DoWorkEventArgs e)
         {
-            databaseBackupName = txtBackupAs.Text;
+            userBackupName = txtBackupAs.Text;
             var database = e.Argument as SqlDatabase;
-            e.Result = Database.Backup(database, databaseBackupName, _backgroundWorker);
+            e.Result = Database.Backup(database, userBackupName, _backgroundWorker);
         }
 
         private void BackgroundWorkerOnRunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
