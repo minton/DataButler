@@ -20,7 +20,7 @@ namespace DataButlerTests
         {
             string failure;
             var name = Database.GetDatabaseName(SampleBackup, out failure);
-            Assert.AreEqual("IddealDemo", name);
+            Assert.AreEqual("Sample", name);
         }
         [Test]
         public void CanRestoreToNonExistingDatabase()
