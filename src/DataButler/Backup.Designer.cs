@@ -68,7 +68,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(160, 9);
+            this.label1.Location = new System.Drawing.Point(173, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 9;
@@ -76,7 +76,7 @@
             // 
             // btnBackup
             // 
-            this.btnBackup.Location = new System.Drawing.Point(322, 97);
+            this.btnBackup.Location = new System.Drawing.Point(313, 97);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(113, 33);
             this.btnBackup.TabIndex = 8;
@@ -87,7 +87,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DataButler.Properties.Resources.Loading;
-            this.pictureBox1.Location = new System.Drawing.Point(419, 31);
+            this.pictureBox1.Location = new System.Drawing.Point(432, 31);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(16, 16);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -109,7 +109,7 @@
             this.cbDatabase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDatabase.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F);
             this.cbDatabase.FormattingEnabled = true;
-            this.cbDatabase.Location = new System.Drawing.Point(163, 25);
+            this.cbDatabase.Location = new System.Drawing.Point(176, 25);
             this.cbDatabase.Name = "cbDatabase";
             this.cbDatabase.Size = new System.Drawing.Size(250, 28);
             this.cbDatabase.TabIndex = 12;
@@ -117,7 +117,7 @@
             // 
             // txtBackupAs
             // 
-            this.txtBackupAs.Location = new System.Drawing.Point(160, 71);
+            this.txtBackupAs.Location = new System.Drawing.Point(176, 71);
             this.txtBackupAs.Name = "txtBackupAs";
             this.txtBackupAs.Size = new System.Drawing.Size(250, 20);
             this.txtBackupAs.TabIndex = 13;
@@ -125,7 +125,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(160, 56);
+            this.label2.Location = new System.Drawing.Point(173, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 14;
