@@ -52,7 +52,6 @@ namespace DataButler
             txtLog.Visible = true;
             txtLog.Clear();
             Cursor = Cursors.WaitCursor;
-           // btnBackup.Enabled = cbDatabase.Enabled = false;
             WaitImage.Visible = true;
             _backgroundWorker.RunWorkerAsync(cbDatabase.SelectedItem as SqlDatabase);
         }
