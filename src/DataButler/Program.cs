@@ -47,8 +47,10 @@ namespace DataButler
 
         static void SetupRegistry()
         {
+#if !DEBUG
             var dataButlerPath = string.Format(@"{0} ""%1""", Process.GetCurrentProcess().MainModule.FileName);
             SetupContextMenuAssociations(dataButlerPath);
+#endif
         }
 
         static void SetupContextMenuAssociations(string dataButlerPath)
