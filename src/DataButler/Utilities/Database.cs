@@ -113,7 +113,7 @@ namespace DataButler.Utilities
                     con.InfoMessage += (s, e) => Log(e.Message);
                     var header =
                         con.Query(string.Format("RESTORE HEADERONLY FROM DISK = N'{0}' WITH NOUNLOAD", file))
-                           .SingleOrDefault();
+                           .FirstOrDefault();
                     return header.DatabaseName;
                 }
             }            
