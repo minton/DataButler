@@ -74,10 +74,10 @@ namespace DataButler.Utilities
             }
         }
 
-        public static string Backup(SqlDatabase database, BackgroundWorker backgroundWorker = null)
+        public static string Backup(SqlDatabase database, string userBackupName, BackgroundWorker backgroundWorker = null)
         {
             string result;
-            var fileName = GetBackupFileName(database);
+            var fileName = GetBackupFileName(database, userBackupName);
             _bgw = backgroundWorker;
             using (var con = (SqlConnection)OpenConnection())
             {
@@ -88,12 +88,12 @@ namespace DataButler.Utilities
             return result;
         }
 
-        static string GetBackupFileName(SqlDatabase database)
+        static string GetBackupFileName(SqlDatabase database, string userBackupName)
         {
             var backupDir = string.IsNullOrEmpty(database.LastBackupName)
                 ? @"C:\temp\"
                 : Path.GetDirectoryName(database.LastBackupName);
-            var backupName = string.Format("{0}{1}", database.Name, DateTime.Now.ToString("yyyyMMddHHmm"));
+            var backupName = SetBackupName(database.Name, userBackupName);
             var fullBackupName = Path.Combine(backupDir, string.Format("{0}.bak", backupName));
             var copyCount = 0;
             while (File.Exists(fullBackupName))
@@ -101,6 +101,13 @@ namespace DataButler.Utilities
                 fullBackupName = Path.Combine(backupDir, string.Format("{0}_Copy{1}.bak", backupName, ++copyCount));
             }
             return fullBackupName;
+        }
+
+        public static object SetBackupName(string databaseName, string userBackupName)
+        {
+            return string.IsNullOrWhiteSpace(userBackupName)
+                ? string.Format("{0}, {1}", databaseName, DateTime.Now.ToString("yyyyMMddHHmm"))
+                :  userBackupName;
         }
 
         public static string GetDatabaseName(string file, out string failure)
