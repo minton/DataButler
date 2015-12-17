@@ -85,5 +85,15 @@ namespace DataButler
         {
             btnBackup.Enabled = cbDatabase.SelectedItem != null;
         }
+
+        private void txtBackupAs_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnBackup.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
     }
 }

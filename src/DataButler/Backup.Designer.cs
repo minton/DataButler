@@ -121,6 +121,7 @@
             this.txtBackupAs.Name = "txtBackupAs";
             this.txtBackupAs.Size = new System.Drawing.Size(250, 20);
             this.txtBackupAs.TabIndex = 13;
+            this.txtBackupAs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBackupAs_KeyDown);
             // 
             // label2
             // 
