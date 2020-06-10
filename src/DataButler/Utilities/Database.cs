@@ -35,7 +35,7 @@ namespace DataButler.Utilities
         {
             Log("Retrieving SQL's data directory...");
             var getSqlPathQuery = @"declare @SmoRoot nvarchar(512)
-                                    exec master.dbo.xp_instance_regread N'HKEY_LOCAL_MACHINE', N'SOFTWARE\Microsoft\MSSQLServer\Setup', N'SQLPath', @SmoRoot OUTPUT
+                                    exec master.dbo.xp_instance_regread N'HKEY_LOCAL_MACHINE', N'SOFTWARE\Microsoft\MSSQLServer\Setup', N'SQLDataRoot', @SmoRoot OUTPUT
                                     select @SmoRoot";
             var sqlPath = con.Query<string>(getSqlPathQuery).SingleOrDefault();
             DefaultDataDirectory = Path.Combine(sqlPath, "Data");
